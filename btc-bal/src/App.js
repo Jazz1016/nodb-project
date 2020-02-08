@@ -8,7 +8,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {}
+      user: {
+        id: 0,
+        wallets: []
+      }
     };
   }
 
@@ -18,20 +21,49 @@ class App extends React.Component {
       this.setState({ user: response.data });
     });
   };
+  editName = newName => {
+    axios.put(`/api/user`).then(response => {
+      this.setState({ user: response.data });
+    });
+  };
 
-  addWallet = () => {};
+  addWallet = newWallet => {
+    axios
+      .post(`/api/user/wallet`, newWallet)
+      .then(response => this.setState({ user: response.data }));
+  };
 
-  editName = () => {};
+  balAdd = (id, newBal) => {
+    axios
+      .put(`/api/user/wallet/add/${id}`, { bal: newBal })
+      .then(response => this.setState({ user: response.data }));
+  };
 
-  balAdd = () => {};
+  balMinus = (id, newBal) => {
+    axios
+      .put(`/api/user/wallet/minus/${id}`, { bal: newBal })
+      .then(response => this.setState({ user: response.data }));
+  };
 
-  balMinus = () => {};
+  deleteWallet = id => {
+    axios
+      .delete(`/api/user/wallet/${id}`)
+      .then(response => this.setState({ user: response.data }));
+  };
 
   render() {
     return (
       <div className="App">
-        <Header />
-        <Profile editName={this.editName} />
+        <Header name={this.state.user.name} />
+        <Profile
+          editName={this.editName}
+          addWallet={this.addWallet}
+          balAdd={this.balAdd}
+          balMinus={this.balMinus}
+          deleteWallet={this.deleteWallet}
+          user={this.state.user}
+          wallets={this.state.user.wallets}
+        />
       </div>
     );
   }

@@ -11,8 +11,8 @@ app.use(cors());
 app.get(`/api/user`, ctrl.getUserInfo);
 app.put(`/api/user`, ctrl.editName);
 app.post(`/api/user/wallet`, ctrl.addWallet);
-app.put(`/api/user/wallet/:id`, ctrl.balMinus);
-app.put(`/api/user/wallet/:id`, ctrl.balAdd);
+app.put(`/api/user/wallet/minus/:id`, ctrl.balMinus);
+app.put(`/api/user/wallet/add/:id`, ctrl.balAdd);
 app.delete(`/api/user/wallet/:id`, ctrl.delWallet);
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));
