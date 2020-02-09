@@ -8,7 +8,7 @@ function Wallet(props) {
   console.log(props.wallet.bal);
   return (
     <div className="wallet">
-      <p className="wallet-spacing">{props.wallet.coin}</p>
+      <h4 className="wallet-spacing">{props.wallet.coin}</h4>
       <p className="wallet-spacing">{props.wallet.address}</p>
       <p className="wallet-spacing">{props.wallet.bal}</p>
       <Withdraw

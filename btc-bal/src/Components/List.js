@@ -22,6 +22,7 @@ function List(props) {
 
   return (
     <main className="overflow">
+      <header className="list-head1">Your wallets:</header>
       <header className="list-head">
         <h4 className="p1">coin</h4>
         <h4 className="p2">address</h4>

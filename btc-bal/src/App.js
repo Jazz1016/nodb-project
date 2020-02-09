@@ -53,6 +53,9 @@ class App extends React.Component {
   };
 
   render() {
+    let btc = "$9,886.11";
+    let eth = "$225.62";
+    let ltc = "$77.03";
     return (
       <div className="App">
         <Header name={this.state.user.name} />
@@ -65,7 +68,11 @@ class App extends React.Component {
           user={this.state.user}
           wallets={this.state.user.wallets}
         />
-        <footer className="footer"></footer>
+        <footer className="footer">
+          <p className="head-space">BTC Price: {btc}</p>
+          <p className="head-space">LTC Price: {ltc}</p>
+          <p className="head-space">ETH: {eth}</p>
+        </footer>
       </div>
     );
   }

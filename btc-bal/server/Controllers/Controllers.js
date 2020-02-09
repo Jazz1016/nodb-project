@@ -24,7 +24,14 @@ module.exports = {
       "xsn",
       "xrp",
       "eos",
-      "zec"
+      "zec",
+      "etc",
+      "bch",
+      "bnb",
+      "bat",
+      "btg",
+      "kmd",
+      "pivx"
     ];
     let r = Math.random()
       .toString(36)
@@ -63,7 +70,8 @@ module.exports = {
     const index = user.wallets.findIndex(wallet => wallet.id === +id);
     const { bal } = req.body;
     // console.log(user.wallets[index]);
-    if (typeof +bal === "number") {
+
+    if (typeof +bal === "number" && user.wallets[index].bal - +bal >= 0) {
       console.log(bal);
       user.wallets[index] = {
         id: user.wallets[index].id,

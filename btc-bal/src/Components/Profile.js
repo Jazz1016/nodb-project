@@ -22,8 +22,8 @@ class Profile extends React.Component {
         <div className="prof-area">
           <section className="prof-1">
             <p className="user-name">
-              <h4>{this.props.user.name}</h4>
-              age: {this.props.user.age}
+              Welcome back,
+              <h4 className="margin">{this.props.user.name}</h4>
             </p>
             <img
               className="img"
