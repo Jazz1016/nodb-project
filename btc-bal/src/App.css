@@ -1,38 +1,117 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
+  align-content: stretch;
+}
+
+.header {
+  width: 100vw;
+  height: 50px;
+  background-color: #2f632b;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  align-content: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.Profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  background-color: #2b635b;
+  width: 100vw;
+  height: 580px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.prof-area {
+  background-color: #4b632b;
+  width: 80vw;
+}
+.list-head {
+  background-color: #2f632b;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: stretch;
+  border-style: solid;
+  border-width: 0.5px;
+}
+.footer {
+  background-color: #4b632b;
+  width: 100vw;
+  height: 27px;
+}
+.list {
+  background-color: #2f632b;
+  width: 80vw;
+  border-style: solid;
+  border-width: 0.1px;
+}
+
+.prof-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  margin-left: 500px;
+}
+
+.prof-2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  margin-right: 500px;
+}
+
+.user-name {
+  margin: 0px 50px 120px 0px;
+}
+
+.img {
+  margin-top: 20px;
+  height: 200px;
+}
+
+.wallet-spacing {
+  margin-right: 15px;
+}
+
+.p1 {
+  margin-left: 10px;
+}
+.p2 {
+  margin-left: 150px;
+}
+.p3 {
+  margin-left: 155px;
+}
+
+.wallet {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.overflow {
+  overflow: auto;
 }

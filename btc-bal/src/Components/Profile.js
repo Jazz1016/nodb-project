@@ -1,5 +1,6 @@
 import React from "react";
 import List from "./List";
+import "../App.css";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -17,19 +18,34 @@ class Profile extends React.Component {
 
   render(props) {
     return (
-      <div>
-        <h4>Add wallet</h4>
-        <input onChange={e => this.handleChange(e.target.value)} />
-        <button
-          onClick={() =>
-            this.props.addWallet({
-              coin: this.state.inputLine,
-              bal: this.state.bal
-            })
-          }
-        >
-          Add coin
-        </button>
+      <div className="Profile">
+        <div className="prof-area">
+          <section className="prof-1">
+            <p className="user-name">
+              <h4>{this.props.user.name}</h4>
+              age: {this.props.user.age}
+            </p>
+            <img
+              className="img"
+              src={`${this.props.user.img}`}
+              alt={"guy sitting in gold"}
+            />
+          </section>
+          <section className="prof-2">
+            <h4 className="wallet-spacing">Add wallet</h4>
+            <input onChange={e => this.handleChange(e.target.value)} />
+            <button
+              onClick={() =>
+                this.props.addWallet({
+                  coin: this.state.inputLine,
+                  bal: this.state.bal
+                })
+              }
+            >
+              Add coin
+            </button>
+          </section>
+        </div>
         <List
           addWallet={this.props.addWallet}
           balMinus={this.props.balMinus}

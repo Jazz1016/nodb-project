@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       user: {
         id: 0,
-        wallets: []
+        wallets: [],
+        img: ""
       }
     };
   }
@@ -64,6 +65,7 @@ class App extends React.Component {
           user={this.state.user}
           wallets={this.state.user.wallets}
         />
+        <footer className="footer"></footer>
       </div>
     );
   }

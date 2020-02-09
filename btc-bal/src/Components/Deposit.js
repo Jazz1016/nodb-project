@@ -1,10 +1,11 @@
 import React from "react";
+import "../App.css";
 
 class Deposit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {},
+      inputLine: "",
       isEditing: false
     };
   }
@@ -23,6 +24,7 @@ class Deposit extends React.Component {
           <div>
             <input onChange={e => this.handleChanage(e.target.value)} />
             <button
+              className="wallet-spacing"
               onClick={() => {
                 console.log(this.props.id);
                 this.props.balAdd(this.props.id, this.state.inputLine);
@@ -33,7 +35,9 @@ class Deposit extends React.Component {
             </button>
           </div>
         ) : (
-          <button onClick={() => this.toggleEdit()}>Deposit</button>
+          <button className="wallet-spacing" onClick={() => this.toggleEdit()}>
+            Deposit
+          </button>
         )}
       </div>
     );

@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 
 class Withdraw extends React.Component {
   constructor(props) {
@@ -22,8 +23,9 @@ class Withdraw extends React.Component {
           <div>
             <input onChange={e => this.handleChanage(e.target.value)} />
             <button
+              className="wallet-spacing"
               onClick={() => {
-                console.log(this.state.inputLine);
+                // console.log(this.state.inputLine);
                 this.props.balMinus(this.props.id, this.state.inputLine);
                 this.toggleEdit();
               }}
@@ -32,7 +34,9 @@ class Withdraw extends React.Component {
             </button>
           </div>
         ) : (
-          <button onClick={() => this.toggleEdit()}>Withdraw</button>
+          <button className="wallet-spacing" onClick={() => this.toggleEdit()}>
+            Withdraw
+          </button>
         )}
         {/* {this.state.isEditing ? (
           <div>
