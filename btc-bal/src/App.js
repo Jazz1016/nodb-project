@@ -75,9 +75,9 @@ class App extends React.Component {
 
   render() {
     // this.searchWallets(coin: btc);
-    let btc = "$9,859.34";
-    let eth = "$223.46";
-    let ltc = "$74.40";
+    let btc = "$9,847.70";
+    let eth = "$$221.72";
+    let ltc = "$73.63";
     return (
       <div className="App">
         <Header name={this.state.user.name} />

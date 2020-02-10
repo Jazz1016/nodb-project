@@ -123,7 +123,8 @@
 }
 
 .search {
-  margin-left: 50px;
+  margin-left: 150px;
+  font-weight: bold;
 }
 
 .user-name {
@@ -166,4 +167,8 @@
 
 .overflow {
   overflow: auto;
+}
+
+.margin-left {
+  margin-left: 15px;
 }

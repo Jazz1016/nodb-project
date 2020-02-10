@@ -22,6 +22,10 @@ class Profile extends React.Component {
     this.setState({ searchLine: val });
   };
 
+  resetInputs = () => {
+    this.setState({ inputLine: "", searchLine: "" });
+  };
+
   render(props) {
     return (
       <div className="Profile">
@@ -50,19 +54,22 @@ class Profile extends React.Component {
             >
               Add coin
             </button>
-            <input
-              className="search"
-              onChange={e => this.handleSearchLine(e.target.value)}
-            />
-            <button
-              onClick={() => {
-                console.log(this.props.searchWallets);
-                this.props.searchWallets(this.state.searchLine);
-                this.handleSearchLine("");
-              }}
-            >
-              search
-            </button>
+            <div className="search">
+              Search
+              <input
+                className="margin-left"
+                onChange={e => this.handleSearchLine(e.target.value)}
+              />
+              <button
+                onClick={() => {
+                  console.log(this.props.searchWallets);
+                  this.props.searchWallets(this.state.searchLine);
+                  this.handleSearchLine("");
+                }}
+              >
+                search
+              </button>
+            </div>
           </section>
         </div>
 
