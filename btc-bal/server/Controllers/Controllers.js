@@ -1,5 +1,7 @@
 const user = require("../../btc_data1.json");
+const user2 = {};
 id = 5;
+prices = [];
 
 module.exports = {
   getUserInfo: (req, res) => {
@@ -10,9 +12,20 @@ module.exports = {
     user.name = name;
     res.status(200).send(user);
   },
+  searchWallets: (req, res) => {
+    console.log(req.query);
+    const { coin } = req.query;
+
+    if (coin) {
+      if (coin !== "") {
+        let items = user.wallets.filter(el => el.coin.includes(req.query.coin));
+        return res.status(200).send(items);
+      } else return res.status(200).send(user.wallets);
+    } else res.status(200).send(user.wallets);
+  },
   addWallet: (req, res) => {
     const { coin, bal } = req.body;
-    console.log(coin);
+    // console.log(coin);
     const coinArr = [
       "ltc",
       "eth",
@@ -31,7 +44,8 @@ module.exports = {
       "bat",
       "btg",
       "kmd",
-      "pivx"
+      "pivx",
+      "posw"
     ];
     let r = Math.random()
       .toString(36)

@@ -5,14 +5,14 @@ class Deposit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputLine: "",
-      isEditing: false
+      isEditing: false,
+      inputLine: ""
     };
   }
   toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing });
   };
-  handleChanage = val => {
+  handleChange = val => {
     this.setState({ inputLine: val });
   };
 
@@ -22,7 +22,10 @@ class Deposit extends React.Component {
         <h1></h1>
         {this.state.isEditing ? (
           <div>
-            <input onChange={e => this.handleChanage(e.target.value)} />
+            <input
+              type="number"
+              onChange={e => this.handleChange(e.target.value)}
+            />
             <button
               className="wallet-spacing"
               onClick={() => {

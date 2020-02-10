@@ -21,7 +21,10 @@ class Withdraw extends React.Component {
         <h1></h1>
         {this.state.isEditing ? (
           <div>
-            <input onChange={e => this.handleChanage(e.target.value)} />
+            <input
+              type="number"
+              onChange={e => this.handleChanage(e.target.value)}
+            />
             <button
               className="wallet-spacing"
               onClick={() => {
@@ -38,24 +41,6 @@ class Withdraw extends React.Component {
             Withdraw
           </button>
         )}
-        {/* {this.state.isEditing ? (
-          <div>
-            <input onChange={e => this.handleChange(e.target.value)} />
-            <button
-              onClick={() => {
-                this.props.saveName(
-                  this.props.pokemon.id,
-                  this.state.userInput
-                );
-                this.toggleEdit();
-              }}
-            >
-              Save
-            </button>
-          </div>
-        ) : (
-          <p onDoubleClick={this.toggleEdit}>{this.props.pokemon.name}</p>
-        )} */}
       </div>
     );
   }

@@ -7,13 +7,19 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       inputLine: "",
+      searchLine: "",
       bal: 0
     };
   }
 
   handleChange = val => {
-    console.log(val);
+    // console.log(val);
     this.setState({ inputLine: val });
+  };
+
+  handleSearchLine = val => {
+    // console.log(val);
+    this.setState({ searchLine: val });
   };
 
   render(props) {
@@ -28,7 +34,7 @@ class Profile extends React.Component {
             <img
               className="img"
               src={`${this.props.user.img}`}
-              alt={"guy sitting in gold"}
+              alt={"profile picture"}
             />
           </section>
           <section className="prof-2">
@@ -44,8 +50,22 @@ class Profile extends React.Component {
             >
               Add coin
             </button>
+            <input
+              className="search"
+              onChange={e => this.handleSearchLine(e.target.value)}
+            />
+            <button
+              onClick={() => {
+                console.log(this.props.searchWallets);
+                this.props.searchWallets(this.state.searchLine);
+                this.handleSearchLine("");
+              }}
+            >
+              search
+            </button>
           </section>
         </div>
+
         <List
           addWallet={this.props.addWallet}
           balMinus={this.props.balMinus}

@@ -10,6 +10,7 @@ app.use(cors());
 
 app.get(`/api/user`, ctrl.getUserInfo);
 app.put(`/api/user`, ctrl.editName);
+app.get(`/api/user/wallet`, ctrl.searchWallets);
 app.post(`/api/user/wallet`, ctrl.addWallet);
 app.put(`/api/user/wallet/minus/:id`, ctrl.balMinus);
 app.put(`/api/user/wallet/add/:id`, ctrl.balAdd);

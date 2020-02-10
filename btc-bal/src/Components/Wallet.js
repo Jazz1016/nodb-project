@@ -4,8 +4,8 @@ import Deposit from "./Deposit";
 import "../App.css";
 
 function Wallet(props) {
-  console.log(props.wallet.bal);
-  console.log(props.wallet.bal);
+  // console.log(props.wallet.bal);
+  // console.log(props.wallet.bal);
   return (
     <div className="wallet">
       <h4 className="wallet-spacing">{props.wallet.coin}</h4>

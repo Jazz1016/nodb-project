@@ -3,7 +3,6 @@ import Wallet from "./Wallet";
 import "../App.css";
 
 function List(props) {
-  // console.log(props.wallets);
   let walletList = props.wallets.map(el => {
     return (
       <div className="list">
