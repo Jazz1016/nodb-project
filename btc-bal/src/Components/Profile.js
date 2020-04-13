@@ -43,7 +43,10 @@ class Profile extends React.Component {
           </section>
           <section className="prof-2">
             <h4 className="wallet-spacing">Add wallet</h4>
-            <input onChange={e => this.handleChange(e.target.value)} />
+            <input
+              // {use value=to have default text on input}
+              onChange={e => this.handleChange(e.target.value)}
+            />
             <button
               onClick={() =>
                 this.props.addWallet({
